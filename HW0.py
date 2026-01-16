@@ -1,14 +1,17 @@
 import numpy as num
-import matplotlib as mat
+import matplotlib.pyplot as plt
 
 
 
 
 def g_distribution(samples:int):
-    num.random.normal(0)
+    data: num.ndarray=num.random.multivariate_normal([0,0],[[1,0],[0,1]],samples)
+
+    plt.scatter(data[:,0],data[:,1])
+
+    plt.show()
 
 
-def scatterplot():
 
 
 
@@ -18,5 +21,7 @@ def scatterplot():
 
 def main():
     g_distribution(100)
-    scatterplot()
 
+
+if __name__ == "__main__":
+    main()
